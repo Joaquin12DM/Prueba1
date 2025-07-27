@@ -21,7 +21,52 @@ public class Mascota {
     @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
 
-    // Getters y setters
-    // ...
-}
+    public Mascota() {}
 
+    public Mascota(String nombre, String tipo, Integer edad, Cliente cliente) {
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.edad = edad;
+        this.cliente = cliente;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public Integer getEdad() {
+        return edad;
+    }
+
+    public void setEdad(Integer edad) {
+        this.edad = edad;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+}
