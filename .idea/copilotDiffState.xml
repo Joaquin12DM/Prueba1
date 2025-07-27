@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/src/main/java/com/aplicacion/entity/Cliente.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/main/java/com/aplicacion/entity/Cliente.java" />
+              <option name="updatedContent" value="package com.aplicacion.entity;&#10;&#10;import jakarta.persistence.*;&#10;import java.util.List;&#10;&#10;@Entity&#10;public class Cliente {&#10;    @Id&#10;    @GeneratedValue(strategy = GenerationType.IDENTITY)&#10;    private Integer id;&#10;&#10;    @Column(length = 100, nullable = false)&#10;    private String nombre;&#10;&#10;    @Column(length = 100, nullable = false, unique = true)&#10;    private String email;&#10;&#10;    @OneToMany(mappedBy = &quot;cliente&quot;)&#10;    private List&lt;Mascota&gt; mascotas;&#10;&#10;    // Getters y setters&#10;    // ...&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/aplicacion/entity/Mascota.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/main/java/com/aplicacion/entity/Mascota.java" />
+              <option name="updatedContent" value="package com.aplicacion.entity;&#10;&#10;import jakarta.persistence.*;&#10;&#10;@Entity&#10;public class Mascota {&#10;    @Id&#10;    @GeneratedValue(strategy = GenerationType.IDENTITY)&#10;    private Integer id;&#10;&#10;    @Column(length = 100, nullable = false)&#10;    private String nombre;&#10;&#10;    @Column(length = 50, nullable = false)&#10;    private String tipo;&#10;&#10;    @Column(nullable = false)&#10;    private Integer edad;&#10;&#10;    @ManyToOne&#10;    @JoinColumn(name = &quot;cliente_id&quot;, nullable = false)&#10;    private Cliente cliente;&#10;&#10;    // Getters y setters&#10;    // ...&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/aplicacion/entity/MascotaTratamiento.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/main/java/com/aplicacion/entity/MascotaTratamiento.java" />
+              <option name="originalContent" value="&#10;" />
+              <option name="updatedContent" value="package com.aplicacion.entity;&#10;&#10;import jakarta.persistence.*;&#10;import java.io.Serializable;&#10;&#10;@Entity&#10;@Table(name = &quot;Mascota_Tratamiento&quot;)&#10;@IdClass(MascotaTratamientoId.class)&#10;public class MascotaTratamiento implements Serializable {&#10;    @Id&#10;    @ManyToOne&#10;    @JoinColumn(name = &quot;mascota_id&quot;, nullable = false)&#10;    private Mascota mascota;&#10;&#10;    @Id&#10;    @ManyToOne&#10;    @JoinColumn(name = &quot;tratamiento_id&quot;, nullable = false)&#10;    private Tratamiento tratamiento;&#10;&#10;    public MascotaTratamiento() {}&#10;&#10;    public MascotaTratamiento(Mascota mascota, Tratamiento tratamiento) {&#10;        this.mascota = mascota;&#10;        this.tratamiento = tratamiento;&#10;    }&#10;&#10;    public Mascota getMascota() {&#10;        return mascota;&#10;    }&#10;&#10;    public void setMascota(Mascota mascota) {&#10;        this.mascota = mascota;&#10;    }&#10;&#10;    public Tratamiento getTratamiento() {&#10;        return tratamiento;&#10;    }&#10;&#10;    public void setTratamiento(Tratamiento tratamiento) {&#10;        this.tratamiento = tratamiento;&#10;    }&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/aplicacion/entity/Tratamiento.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/main/java/com/aplicacion/entity/Tratamiento.java" />
+              <option name="updatedContent" value="package com.aplicacion.entity;&#10;&#10;import jakarta.persistence.*;&#10;&#10;@Entity&#10;public class Tratamiento {&#10;    @Id&#10;    @GeneratedValue(strategy = GenerationType.IDENTITY)&#10;    private Integer id;&#10;&#10;    @Column(length = 100, nullable = false)&#10;    private String nombre;&#10;&#10;    @Column(columnDefinition = &quot;TEXT&quot;, nullable = false)&#10;    private String descripcion;&#10;&#10;    // Getters y setters&#10;    // ...&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
